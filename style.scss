@@ -1,0 +1,129 @@
+/* Materialize CSS */
+@import 'prefixer';
+@import 'color';
+@import 'variables';
+@import 'grid';
+@import 'typography';
+@import 'global';
+@import 'navbar';
+
+$bg-color: #fff;
+$fg-color: #222;
+$chat-bubble-bg: color('grey', 'lighten-3');
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: $bg-color;
+    flex-direction: column;
+       font-family: 'Roboto', sans-serif;
+        min-height: 100vh;
+        overflow-y: scroll;
+           display: flex;
+             color: $fg-color;
+}
+
+.brand-logo {
+  font-weight: 500;
+}
+
+main {
+  flex-shrink: 0;
+   flex-basis: auto;
+    flex-grow: 1;
+      padding: 1.5rem 0;
+}
+
+.chat-bubble {
+  background-color: color('grey', 'lighten-3');
+     border-radius: .3rem;
+          position: relative;
+           padding: 1rem;
+             float: left;
+}
+
+.chat-bubble::before {
+  border-bottom: .7rem solid transparent;
+   border-right: .7rem solid $chat-bubble-bg;
+     border-top: .7rem solid transparent;
+       position: absolute;
+        content: '';
+         height: 0;
+          right: 100%;
+          width: 0;
+}
+
+ul,
+.chat-bubble > .row {
+  margin-bottom: 0;
+     margin-top: 0;
+}
+
+.chat-bubble ul > li {
+  padding-left: .3rem;
+   margin-left: .7rem;
+    list-style: '-';
+}
+
+main > .row:nth-child(even) > .col {
+  @extend .right;
+
+  > .chat-bubble {
+    float: right;
+  }
+
+  > .chat-bubble::before {
+  @extend .chat-bubble::before;
+   border-right: unset;
+    border-left: .7rem solid $chat-bubble-bg;
+           left: 100%;
+  }
+}
+
+main > .row:last-child {
+  margin-bottom: 0;
+}
+
+code {
+  background-color: lighten($chat-bubble-bg, 3%);
+       font-family: monospace;
+         font-size: .7em;
+         word-wrap: break-word;
+         max-width: 100%;
+           padding: .2rem;
+}
+
+footer.page-footer {
+  margin-top: 0;
+   font-size: .7rem;
+       color: $bg-color;
+}
+
+#heart {
+  position: relative;
+     color: color('materialize-red', 'base');
+       top: 1px;
+}
+
+.chat-bubble::selection,
+.chat-bubble ::selection {
+  background-color: $fg-color;
+             color: $chat-bubble-bg;
+}
+.chat-bubble ::-moz-selection,
+.chat-bubble::-moz-selection {
+  background-color: $fg-color;
+             color: $chat-bubble-bg;
+}
+
+::selection {
+  background-color: rgba($bg-color, 0.9);
+             color: $primary-color;
+}
+
+::-moz-selection {
+  background-color: $bg-color;
+             color: $primary-color;
+}

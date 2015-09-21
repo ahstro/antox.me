@@ -1,0 +1,115 @@
+doctype html
+html(lang="en")
+  head
+     title Antox
+     meta(charset='utf-8')
+     meta(name="viewport", content="width=device-width, initial-scale=1")
+     link(rel="stylesheet", type="text/css", href="https://necolas.github.io/normalize.css/latest/normalize.css")
+     //-link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css")
+     link(rel="stylesheet", type="text/css", href="https://fonts.googleapis.com/css?family=Roboto:400,500")
+     link(rel="stylesheet", type="text/css", href="style.css")
+     //-script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js")
+     script(type="text/javascript", src="script.js")
+
+  body
+    header
+      nav
+        .container
+          .nav-wrapper
+            a.brand-logo.left(href="#") Antox
+            ul.right
+              li
+                a(href="https://wiki.tox.chat/clients/Antox" target="_blank") Wiki
+              li
+                a(href="https://github.com/subliun/Antox" target="_blank") GitHub
+
+    main.container
+
+      .row
+        .col.s11
+          .chat-bubble
+            strong Antox
+            |  is an Android client for Tox. It aims to bring the full multimedia support Tox offers to your device, although it's still currently in heavy development. Antox is built on Google's Material Design guidelines, and is both fast and fluid. Support for stickers, geo-location, and other various services offered by other competing applications are currently being decided upon.
+
+      .row
+        .col.s11
+          .chat-bubble
+            .row
+              .col.s12.m6
+                strong What Is Currently Working:
+                ul
+                  li One to one messaging
+                  li File transfers
+                  li Avatars
+                  li Multi-lingual
+                  li Use more than one profile
+                  li Read Receipts
+                  li Spell Check
+              .col.s12.m6
+                strong Current development:
+                ul
+                  li Adding A/V
+                  li Improving the design of several features
+
+      .row
+        .col.s11
+          .chat-bubble
+            .row
+              .col.s12.m6.l3
+                strong Google Play Beta
+                p
+                  | You can install the latest version of Antox by joining the 
+                  a(href="https://play.google.com/apps/testing/chat.tox.antox") Google Play Beta
+                  | . This will give you the latest version of the app and allow you to help us to test it by sending us error reports.
+              .col.s12.m6.l3
+                strong F-Droid
+                p
+                  | If you don't want to use the Google Play service, you can install Antox from our F-Droid repository by adding the following to your list of repositories:
+                  br
+                  code https://antox.me/fdroid/repo
+              .col.s12.m6.l3
+                strong Jenkins
+                p
+                  | If you don't want to use the repositories you can also download the latest .apk of Antox from the 
+                  a(href="https://build.tox.chat/job/antox_build_android_arm_release/") Jenkins build system
+                  |  but please bear in mind that you will also need to manually update Antox. 
+              .col.s12.m6.l3
+                strong Compile from source
+                p
+                  | Lastly, if you prefer to build your own apps, you can find the source code over at 
+                  a(href="https://github.com/subliun/Antox") GitHub
+                  |  as well as 
+                  a(href="https://github.com/subliun/Antox#compiling-antox-from-source-with-android-studio") instructions
+                  |  on how to build it using Android Studio.
+
+    footer.page-footer
+      .container
+        .row
+          .col.s11
+            | Tox's goal is to get secure messaging in the hands of everyone because we feel it's necessary in a world where our privacy is often overlooked; which means our efforts are free of charge with absolutely no strings attached.
+            p You can find out more about Tox using the links to your right.
+          .col.s1
+            ul.right
+              li
+                a(href="https://github.com/Tox") GitHub
+              li
+                a(href="https://tox.chat") Website
+              li
+                a(href="https://twitter.com/projecttox") Twitter
+              li
+                a(href="https://www.reddit.com/r/ProjectTox") Reddit
+              li
+                a(href="https://wiki.tox.chat/") Wiki
+      .footer-copyright
+        .container
+          .row
+            .col.s8
+              .left
+                span.hide-on-small-and-down Copyright
+                | © 2015 Anton Strömkvist
+            .col.s4
+              .right
+                span.hide-on-small-and-down Made with 
+                span#heart &#x2764; 
+                span.hide-on-small-and-down by 
+                a(href="http://lutic.org") ahstro
