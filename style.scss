@@ -1,11 +1,11 @@
 /* Materialize CSS */
-@import 'prefixer';
-@import 'color';
-@import 'variables';
-@import 'grid';
-@import 'typography';
-@import 'global';
-@import 'navbar';
+@import 'materialize-css/prefixer';
+@import 'materialize-css/color';
+@import 'materialize-css/variables';
+@import 'materialize-css/grid';
+@import 'materialize-css/typography';
+@import 'materialize-css/global';
+@import 'materialize-css/navbar';
 
 $bg-color: #fff;
 $fg-color: #222;
@@ -44,6 +44,7 @@ main {
              float: left;
 }
 
+/* Create arrow for chat bubbles */
 .chat-bubble::before {
   border-bottom: .7rem solid transparent;
    border-right: .7rem solid $chat-bubble-bg;
@@ -51,24 +52,13 @@ main {
        position: absolute;
         content: '';
          height: 0;
-          right: 100%;
           width: 0;
+          right: 100%;
 }
 
-ul,
-.chat-bubble > .row {
-  margin-bottom: 0;
-     margin-top: 0;
-}
-
-.chat-bubble ul > li {
-  padding-left: .3rem;
-   margin-left: .7rem;
-    list-style: '-';
-}
-
+/* Make every other chat bubble align to the right */
 main > .row:nth-child(even) > .col {
-  @extend .right;
+  float: right;
 
   > .chat-bubble {
     float: right;
@@ -82,8 +72,23 @@ main > .row:nth-child(even) > .col {
   }
 }
 
-main > .row:last-child {
+ul,
+.chat-bubble > .row {
   margin-bottom: 0;
+     margin-top: 0;
+}
+
+/* Adds margin between uls on small screens */
+@media only screen and (max-width : 600px) {
+  .chat-bubble > .row > :nth-last-child(n+2) ul {
+    margin-bottom: 1rem;
+  }
+}
+
+.chat-bubble ul > li {
+  padding-left: .3rem;
+   margin-left: .7rem;
+    list-style: '-';
 }
 
 code {
@@ -95,6 +100,10 @@ code {
            padding: .2rem;
 }
 
+main > .row:last-child {
+  margin-bottom: 0;
+}
+
 footer.page-footer {
   margin-top: 0;
    font-size: .7rem;
@@ -102,9 +111,7 @@ footer.page-footer {
 }
 
 #heart {
-  position: relative;
-     color: color('materialize-red', 'base');
-       top: 1px;
+  color: color('materialize-red', 'base');
 }
 
 .chat-bubble::selection,
@@ -112,8 +119,8 @@ footer.page-footer {
   background-color: $fg-color;
              color: $chat-bubble-bg;
 }
-.chat-bubble ::-moz-selection,
-.chat-bubble::-moz-selection {
+.chat-bubble::-moz-selection,
+.chat-bubble ::-moz-selection {
   background-color: $fg-color;
              color: $chat-bubble-bg;
 }

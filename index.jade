@@ -5,18 +5,15 @@ html(lang="en")
      meta(charset='utf-8')
      meta(name="viewport", content="width=device-width, initial-scale=1")
      link(rel="stylesheet", type="text/css", href="https://necolas.github.io/normalize.css/latest/normalize.css")
-     //-link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css")
      link(rel="stylesheet", type="text/css", href="https://fonts.googleapis.com/css?family=Roboto:400,500")
      link(rel="stylesheet", type="text/css", href="style.css")
-     //-script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js")
-     script(type="text/javascript", src="script.js")
 
   body
     header
       nav
         .container
           .nav-wrapper
-            a.brand-logo.left(href="#") Antox
+            a.brand-logo.left(href="/") Antox
             ul.right
               li
                 a(href="https://wiki.tox.chat/clients/Antox" target="_blank") Wiki
@@ -24,7 +21,6 @@ html(lang="en")
                 a(href="https://github.com/subliun/Antox" target="_blank") GitHub
 
     main.container
-
       .row
         .col.s11
           .chat-bubble
@@ -85,10 +81,10 @@ html(lang="en")
     footer.page-footer
       .container
         .row
-          .col.s11
+          .col.s10
             | Tox's goal is to get secure messaging in the hands of everyone because we feel it's necessary in a world where our privacy is often overlooked; which means our efforts are free of charge with absolutely no strings attached.
             p You can find out more about Tox using the links to your right.
-          .col.s1
+          .col.s2
             ul.right
               li
                 a(href="https://github.com/Tox") GitHub
@@ -100,6 +96,7 @@ html(lang="en")
                 a(href="https://www.reddit.com/r/ProjectTox") Reddit
               li
                 a(href="https://wiki.tox.chat/") Wiki
+
       .footer-copyright
         .container
           .row
